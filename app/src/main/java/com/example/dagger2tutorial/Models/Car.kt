@@ -1,11 +1,12 @@
-package com.example.dagger2tutorial
+package com.example.dagger2tutorial.Models
 
 import android.util.Log
 import javax.inject.Inject
 
 class Car @Inject constructor(
     val engine : Engine,
-    val wheels : Wheels){
+    val wheels : Wheels
+){
 
     val TAG = Car::class.java.simpleName
     fun drive(){
