@@ -4,10 +4,11 @@ import com.example.dagger2tutorial.Models.ElectricEngine
 import com.example.dagger2tutorial.Models.Engine
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
-abstract class ElectricEngineModule {
+class ElectricEngineModule(val horsePower : Int) {
 
-    @Binds
-   abstract fun bineEnging(electricEngine: ElectricEngine) : Engine
+    @Provides
+    fun provideElectricEnging() : Engine = ElectricEngine(horsePower)
 }

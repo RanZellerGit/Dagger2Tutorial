@@ -15,9 +15,10 @@ class PetrolEngine @Inject constructor() : Engine {
 
 }
 
-class ElectricEngine @Inject constructor() : Engine {
+class ElectricEngine(val horsePower : Int) : Engine {
+
     override fun startEngine() {
-        Log.d("Car", "Electric engine started")
+        Log.d("Car", "Electric engine started with $horsePower")
     }
 
 }
