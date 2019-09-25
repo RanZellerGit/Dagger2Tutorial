@@ -2,7 +2,8 @@ package com.example.dagger2tutorial
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.dagger2tutorial.DI.DaggerActivityComponent
+import com.example.dagger2tutorial.DI.ApplicationComponent
+import com.example.dagger2tutorial.DI.ElectricEngineModule
 import com.example.dagger2tutorial.Models.Car
 import javax.inject.Inject
 
@@ -17,11 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val component = DaggerActivityComponent.builder()
-            .horsePower(120)
-            .engineCapacity(80)
-            .appComponent((application as Dagger2Tutorial).appComponent)
-            .build()
+        val component = (application as Dagger2Tutorial).appComponent
+            .getActivityComponent(ElectricEngineModule(120))
 
         component.inject(this)
 

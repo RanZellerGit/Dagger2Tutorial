@@ -7,5 +7,5 @@ import dagger.Component
 @Component
 interface ApplicationComponent{
 
-    fun getDriver() : Driver
+    fun getActivityComponent(electricEngineModule: ElectricEngineModule) : ActivityComponent
 }
