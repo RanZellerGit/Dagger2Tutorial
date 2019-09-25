@@ -8,9 +8,9 @@ interface Engine{
 }
 
 
-class PetrolEngine @Inject constructor() : Engine {
+class PetrolEngine @Inject constructor(val horsePower : Int) : Engine {
     override fun startEngine() {
-        Log.d("Car", "PetrolEngine started")
+        Log.d("Car", "PetrolEngine started horsePower =$horsePower")
     }
 
 }
