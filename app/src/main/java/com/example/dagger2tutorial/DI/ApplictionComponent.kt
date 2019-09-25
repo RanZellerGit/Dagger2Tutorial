@@ -7,5 +7,5 @@ import dagger.Component
 @Component
 interface ApplicationComponent{
 
-    fun getActivityComponent(electricEngineModule: ElectricEngineModule) : ActivityComponent
+    fun getActivityComponent() : ActivityComponent.Builder
 }
