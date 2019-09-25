@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         val component = DaggerCarComponent
             .builder()
             .horsePower(120)
+            .engineCapacity(80)
             .build()
         component.inject(this)
 
