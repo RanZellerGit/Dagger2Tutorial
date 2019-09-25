@@ -5,7 +5,9 @@ import com.example.dagger2tutorial.Models.ElectricEngine
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [WheelsModule::class, PetrolEngineModule::class])
 interface CarComponent{
 
