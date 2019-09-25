@@ -1,20 +1,17 @@
 package com.example.dagger2tutorial
 
 import android.app.Application
-import com.example.dagger2tutorial.DI.CarComponent
-import com.example.dagger2tutorial.DI.DaggerCarComponent
+import com.example.dagger2tutorial.DI.ActivityComponent
+import com.example.dagger2tutorial.DI.ApplicationComponent
+import com.example.dagger2tutorial.DI.DaggerApplicationComponent
 
 class Dagger2Tutorial : Application() {
 
-    lateinit var carComponent : CarComponent
+    lateinit var appComponent : ApplicationComponent
     override fun onCreate() {
         super.onCreate()
 
-        carComponent = DaggerCarComponent
-            .builder()
-            .horsePower(120)
-            .engineCapacity(80)
-            .build()
+        appComponent = DaggerApplicationComponent.create()
     }
 
 
